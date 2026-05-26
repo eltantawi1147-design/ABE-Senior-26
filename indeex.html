@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>ABE Senior </title>
+
+<meta name="description" content="ABE Senior 2026 - Official student portfolio website. Search students, boys, girls, and roles easily." />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Google verification هتحطه بعد ما تاخده من Search Console -->
+<meta name="google-site-verification" content="YOUR_CODE_HERE" />
+
+<!-- Open Graph (لما حد يشارك اللينك) -->
+<meta property="og:title" content="ABE Senior 2026" />
+<meta property="og:description" content="Official ABE Senior 2026 student portfolio website." />
+<meta property="og:image" content="https://i.postimg.cc/C102jpM2/senior-2026-abe-photo-profile.jpg" />
+<meta property="og:type" content="website" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/jpg" href="https://i.postimg.cc/C102jpM2/senior-2026-abe-photo-profile.jpg"> 
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+body{
+  font-family: 'Poppins', sans-serif;
+}
+/*color */
+    :root{
+      --bg1:#020b1a;
+      --bg2:#07192d;
+      --gold:#e3b55e;
+      --gold2:#c88d2c;
+      --white:#f5f5f5;
+      --muted:rgba(255,255,255,0.72);
+      --card:rgba(255,255,255,0.05);
+      --border:rgba(255,255,255,0.10);
+    }
+
+    body{
+      background:
+        radial-gradient(circle at top, rgba(227,181,94,0.10), transparent 30%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      color:var(--white);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    /* TOP BAR */
+    nav{
+      width:100%;
+      height:100px;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(2,11,26,0.82);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 22px;
+    }
+
+    .nav-inner{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .search-wrap{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+    }
+
+    .search-box{
+      width:min(760px, 68vw);
+      height:64px;
+      border:none;
+      outline:none;
+      border-radius:999px;
+      padding:0 24px;
+      padding-left:26px;
+      font-size:17px;
+      color:var(--white);
+      background:rgba(255,255,255,0.05);
+      box-shadow:0 0 0 1px rgba(255,255,255,0.08) inset;
+      transition:0.3s ease;
+    }
+
+    .search-box::placeholder{
+      color:rgba(255,255,255,0.70);
+    }
+
+    .search-box:focus{
+      box-shadow:
+        0 0 0 1px rgba(227,181,94,0.75) inset,
+        0 0 26px rgba(227,181,94,0.10);
+    }
+
+    .search-logo{
+      width:62px;
+      height:62px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid rgba(227,181,94,0.9);
+      box-shadow:0 0 20px rgba(227,181,94,0.18);
+      flex-shrink:0;
+      background:#081426;
+    }
+
+    .menu{
+      width:44px;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      flex-shrink:0;
+    }
+
+    .menu span{
+      width:100%;
+      height:3px;
+      border-radius:999px;
+      background:white;
+      transition:0.3s;
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      position:fixed;
+      top:0;
+      right:-280px;
+      width:270px;
+      height:100vh;
+      background:#07111f;
+      z-index:999;
+      padding-top:115px;
+      transition:0.42s ease;
+      box-shadow:-16px 0 32px rgba(0,0,0,0.36);
+      border-left:1px solid rgba(255,255,255,0.06);
+    }
+
+    .sidebar.active{
+      right:0;
+    }
+
+    .sidebar a{
+      display:block;
+      color:white;
+      text-decoration:none;
+      padding:18px 28px;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    .sidebar a:hover{
+      background:rgba(255,255,255,0.05);
+      color:var(--gold);
+      padding-left:38px;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      padding-top:140px;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(227,181,94,0.12), transparent 26%),
+        radial-gradient(circle at 15% 42%, rgba(255,255,255,0.04), transparent 10%),
+        radial-gradient(circle at 86% 40%, rgba(255,255,255,0.04), transparent 10%);
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:1;
+      width:min(1180px, 94%);
+      text-align:center;
+      margin:0 auto;
+    }
+
+    .cap-line{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      margin-bottom:18px;
+      opacity:0.95;
+    }
+
+    .cap-line .line{
+      width:min(180px, 18vw);
+      height:2px;
+      background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .cap-icon{
+      font-size:56px;
+      color:var(--gold);
+      line-height:1;
+      filter:drop-shadow(0 0 10px rgba(227,181,94,0.15));
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .hero h1{
+      font-size:clamp(44px, 6vw, 90px);
+      line-height:1.02;
+      font-weight:800;
+      margin-bottom:10px;
+      animation:fadeUp 1s ease;
+    }
+
+    .hero h1 .main{
+      display:block;
+      color:var(--white);
+      text-shadow:0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .hero h1 .accent{
+      display:block;
+      color:var(--gold);
+      text-shadow:0 10px 30px rgba(227,181,94,0.12);
+    }
+
+    .hero p{
+      font-size:clamp(16px, 2vw, 22px);
+      color:var(--muted);
+      margin-top:16px;
+      animation:fadeUp 1.15s ease;
+    }
+
+    .floating-dots span{
+      position:absolute;
+      width:10px;
+      height:10px;
+      background:var(--gold);
+      opacity:0.8;
+      transform:rotate(45deg);
+      animation:drift 6s linear infinite;
+    }
+
+    .floating-dots span:nth-child(1){ top:22%; left:6%; }
+    .floating-dots span:nth-child(2){ top:28%; left:23%; }
+    .floating-dots span:nth-child(3){ top:24%; right:8%; }
+    .floating-dots span:nth-child(4){ top:44%; left:8%; }
+    .floating-dots span:nth-child(5){ top:48%; right:12%; }
+    .floating-dots span:nth-child(6){ top:62%; left:18%; }
+
+    /* RESULTS */
+    .results-section{
+      position:relative;
+      z-index:1;
+      width:min(1180px, 94%);
+      margin:44px auto 40px;
+      display:none;
+    }
+
+    .results-section.active{
+      display:block;
+    }
+
+    .results-title{
+      text-align:left;
+      margin-bottom:16px;
+      font-size:22px;
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    .results-grid{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+    .student-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:22px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 18px 35px rgba(0,0,0,0.18);
+      transition:0.35s ease;
+    }
+   
+     .portfolio-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:28px;
+  overflow:hidden;
+  backdrop-filter:blur(10px);
+  animation:fadeUp 0.5s ease;
+}
+
+.portfolio-images{
+  display:flex;
+}
+
+.portfolio-images img{
+  width:50%;
+  height:260px;
+  object-fit:cover;
+}
+
+.portfolio-content{
+  padding:25px;
+}
+
+.portfolio-content h2{
+  font-size:28px;
+  margin-bottom:12px;
+  color:#e3b55e;
+}
+
+.portfolio-content p{
+  color:rgba(255,255,255,0.75);
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.portfolio-content a{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:999px;
+  background:#e3b55e;
+  color:#081426;
+  text-decoration:none;
+  font-weight:700;
+}
+
+    .student-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(227,181,94,0.30);
+      box-shadow:0 22px 45px rgba(0,0,0,0.26);
+    }
+
+    .student-card h3{
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .student-card .meta{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .student-card .link-row{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .student-card a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      text-decoration:none;
+      color:#081426;
+      background:linear-gradient(135deg, #f2cc7a, var(--gold2));
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .student-card .placeholder{
+      color:rgba(255,255,255,0.62);
+      font-size:13px;
+    }
+
+    .empty{
+      display:none;
+      margin-top:18px;
+      color:rgba(255,255,255,0.72);
+      text-align:left;
+    }
+
+    .empty.active{
+      display:block;
+    }
+    
+.kids{
+  width:min(1300px,95%);
+  margin-top:60px;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+
+  gap:25px;
+  place-items:end center;
+
+  position:relative;
+  z-index:1;
+}
+.kids img{
+  width:170px;
+  height:240px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+
+  filter:
+    drop-shadow(0 20px 35px rgba(0,0,0,0.45))
+    drop-shadow(0 0 20px rgba(227,181,94,0.10));
+
+  animation:float 4s ease-in-out infinite;
+  transition:0.4s;
+}
+
+.kids img:hover{
+  transform:translateY(-12px) scale(1.05);
+}
+
+.kids img:nth-child(odd){
+  animation-duration:5s;
+}
+
+.kids img:nth-child(even){
+  animation-duration:3.8s;
+}
+
+@media(max-width:768px){
+
+  .kids{
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+  }
+
+  .kids img{
+    max-width:100px;
+  }
+
+}
+.view-section{
+  display:none;
+  width:100%;
+  animation:fadeUp 0.5s ease;
+}
+
+.view-section.active{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.section-title{
+  width:min(1180px, 94%);
+  margin:0 auto 20px;
+  font-size:28px;
+  font-weight:800;
+  color:var(--gold);
+  text-align:center;
+}
+    /* BOTTOM FEATURE CARDS */
+    .features{
+      width:min(1180px, 94%);
+      margin:28px auto 56px;
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:18px;
+    }
+
+    .feature{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:22px;
+      padding:20px;
+      min-height:150px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:10px;
+      backdrop-filter:blur(10px);
+    }
+
+    .feature .icon{
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(227,181,94,0.10);
+      color:var(--gold);
+      font-size:26px;
+      margin-bottom:2px;
+    }
+
+    .feature h4{
+      font-size:18px;
+    }
+
+    .feature p{
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    @keyframes fadeUp{
+      from{ opacity:0; transform:translateY(28px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes float{
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-10px); }
+    }
+
+    @keyframes drift{
+      0%{ transform:translateY(0) rotate(45deg); opacity:0.5; }
+      50%{ transform:translateY(-18px) rotate(45deg); opacity:1; }
+      100%{ transform:translateY(0) rotate(45deg); opacity:0.5; }
+    }
+
+    @media (max-width: 768px){
+      nav{
+        height:90px;
+        padding:0 14px;
+      }
+      .search-wrap{
+        gap:10px;
+      }
+
+      .search-box{
+        width:min(420px, 62vw);
+        height:52px;
+        font-size:15px;
+      }
+
+      .search-logo{
+        width:48px;
+        height:48px;
+      }
+
+      .hero{
+        padding-top:124px;
+      }
+
+      .cap-icon{
+        font-size:42px;
+      }
+
+      .cap-line .line{
+        width:min(120px, 14vw);
+      }
+
+      .results-title{
+        font-size:20px;
+      }
+    }
+ .social-icons{
+  margin-top:30px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:22px;
+}
+
+.social-icons a{
+  width:85px;
+  height:85px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  border-radius:26px;
+
+  font-size:38px;
+
+  text-decoration:none;
+
+  transition:0.4s;
+
+  box-shadow:0 15px 35px rgba(0,0,0,0.35);
+}
+
+.social-icons a:hover{
+  transform:translateY(-10px) scale(1.1);
+}
+
+.social-icons .fa-instagram{
+  color:#ff4fd8;
+}
+.social-icons .fa-tiktok{
+  color:white;
+  text-shadow:
+    2px 2px #ff0050,
+    -2px -2px #00f2ea;
+}
+
+.social-icons a:first-child{
+  background:linear-gradient(
+    135deg,
+    #833ab4,
+    #fd1d1d,
+    #fcb045
+  );
+}
+.social-icons a:last-child{
+  background:#111;
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+.footer{
+  width:100%;
+
+  margin-top:190px;
+  padding:40px 20px;
+
+  text-align:center;
+
+  border-top:1px solid rgba(255,255,255,0.08);
+
+  background:rgba(0,0,0,0.15);
+
+  backdrop-filter:blur(10px);
+}
+
+
+.footer-link{
+  color:#e3b55e;
+  text-decoration:none;
+  font-weight:700;
+  transition:0.3s;
+}
+
+.footer-link:hover{
+  color:white;
+  text-shadow:0 0 12px rgba(227,181,94,0.7);
+}
+
+.footer-socials{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+
+  margin-bottom:20px;
+}
+
+.footer-socials a{
+  width:52px;
+  height:52px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  border-radius:16px;
+
+  text-decoration:none;
+
+  font-size:24px;
+
+  transition:0.4s;
+}
+
+.footer-socials a:first-child{
+  background:linear-gradient(
+    135deg,
+    #833ab4,
+    #fd1d1d,
+    #fcb045
+  );
+
+  color:white;
+}
+
+.footer-socials a:last-child{
+  background:#111;
+
+  color:#00f2ea;
+
+  border:1px solid #ff0050;
+}
+
+.footer-socials a:hover{
+  transform:translateY(-6px) scale(1.08);
+}
+
+.footer h3{
+  color:#e3b55e;
+
+  font-size:22px;
+
+  margin-bottom:10px;
+
+  font-weight:700;
+}
+
+.footer p{
+  color:rgba(255,255,255,0.65);
+
+  font-size:14px;
+}
+
+
+
+
+
+.result-card{
+  width:100%;
+  min-height:420px;
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap:40px;
+  align-items:center;
+  padding:30px;
+  margin:25px 0;
+  border-radius:28px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  animation:fadeUp 0.6s ease;
+}
+.result-info{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.result-info h2{
+  font-size:70px;
+  font-weight:800;
+  color:white;
+  margin-bottom:14px;
+  line-height:1;
+}
+
+.role-text{
+  font-size:28px;
+  font-weight:300;
+  color:rgba(255,255,255,0.7);
+  min-height:40px;
+}
+
+.result-images{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.image-box{
+  position:relative;
+  width:min(100%, 360px);
+  height:420px;
+
+  border-radius:28px;
+  overflow:hidden;
+
+  background:#000;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  box-shadow:0 18px 35px rgba(0,0,0,0.30);
+}
+.student-image{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center 18%;
+
+  opacity:0;
+
+  transform:scale(1.08);
+
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.student-image.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+@media (max-width: 768px){
+  .result-card{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:22px;
+  }
+
+  .result-info{
+    text-align:center;
+    padding-left:0;
+  }
+
+  .role-text{
+    margin:0 auto;
+  }
+
+  .image-box{
+    height:320px;
+  }
+}
+
+
+.party-animation{
+  position:relative;
+  width:100%;
+  height:220px;
+  margin-top:40px;
+  overflow:hidden;
+}
+
+.party{
+  position:absolute;
+  top:50%;
+  font-size:90px;
+  z-index:10;
+}
+
+/* الشمال */
+.left-party{
+  animation:leftParty 4s linear infinite;
+}
+
+/* اليمين */
+.right-party{
+  animation:rightParty 4s linear infinite;
+}
+
+@keyframes leftParty{
+
+  /* البداية */
+  0%{
+    left:-160px;
+
+    transform:
+      translateY(-50%)
+      rotate(0deg);
+  }
+
+  /* يوصلوا للنص */
+  45%{
+    left:calc(50% - 110px);
+
+    transform:
+      translateY(-50%)
+      rotate(-12deg);
+  }
+
+  /* لفة سريعة */
+  50%{
+    left:calc(50% - 110px);
+
+    transform:
+      translateY(-50%)
+      rotate(12deg);
+  }
+
+  /* يروح لليمين */
+  100%{
+    left:110%;
+
+    transform:
+      translateY(-50%)
+      rotate(0deg);
+  }
+}
+
+@keyframes rightParty{
+
+  /* البداية */
+  0%{
+    right:-160px;
+
+    transform:
+      translateY(-50%)
+      scaleX(-1)
+      rotate(0deg);
+  }
+
+  /* يوصلوا للنص */
+  45%{
+    right:calc(50% - 110px);
+
+    transform:
+      translateY(-50%)
+      scaleX(-1)
+      rotate(-12deg);
+  }
+
+  /* لفة سريعة */
+  50%{
+    right:calc(50% - 110px);
+
+    transform:
+      translateY(-50%)
+      scaleX(-1)
+      rotate(12deg);
+  }
+
+  /* يروح للشمال */
+  100%{
+    right:110%;
+
+    transform:
+      translateY(-50%)
+      scaleX(-1)
+      rotate(0deg);
+  }
+}
+
+
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.hero{
+  flex:1;
+}
+
+
+body.searching {
+  background:
+    radial-gradient(circle at top, rgba(227,181,94,0.08), transparent 35%),
+    linear-gradient(180deg, #020b1a, #07192d);
+}
+  </style>
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="search-wrap">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-box"
+          placeholder="Search for a student..."
+          autocomplete="off"
+        />
+        <img
+          src="https://i.postimg.cc/C102jpM2/senior-2026-abe-photo-profile.jpg"
+          alt="Senior Logo"
+          class="search-logo"
+        />
+      </div>
+
+      <div class="menu" id="menuBtn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+<div class="sidebar" id="sidebar">
+  <a href="#" data-view="home">Home</a>
+  <a href="#" data-view="abe">ABE senior</a>
+  <a href="#" data-view="boys">Boy section</a>
+  <a href="#" data-view="girls">Girl section</a>
+  <a href="#" data-view="roles">Role Section</a>
+</div>
+
+  <section class="hero">
+    <div class="floating-dots">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-content">
+      <div class="cap-line">
+        <div class="line"></div>
+        <div class="cap-icon">🎓</div>
+        <div class="line"></div>
+      </div><div class="view-section active" id="homeView">
+        <div class="party-animation">
+
+  <div class="party left-party">🎉</div>
+
+  <div class="party right-party">🎉</div>
+
+</div>
+
+  <h1>
+    <span class="main">WELCOME TO</span>
+    <span class="accent">ABE SENIOR 2026</span>
+  </h1>
+
+
+  
+
+</div>
+
+<div class="view-section" id="abeView">
+  <div class="kids">
+    <img src="https://i.postimg.cc/T3jzPc6P/mohammed-wael-Ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/MTD3sbyB/El-Tantawy-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/tJMX2NTn/Abo-hamdi-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/rFDyz3n9/adhem-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/CKsSWg5y/Ahmed-tamir-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/xTd53gt0/ahmed-shrf-ai.jpg" alt="">
+    <img src="https://i.postimg.cc/vTksW8qL/Ahmed-tawfik-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/qM60pnqn/Anas-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/Z5rSdSrZ/hamdon-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/kgHNr0Vb/hassan-bakr-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/rF78CFSV/Karam-kid-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/5yyrP5xJ/Khaled-basha-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/TwPMF5Bh/khaled-el-shourbagy-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/d3nd5pMp/mohammed-eslam-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/6Q6CBpSh/mohamed-adham-ai.jpg" alt="">
+    <img src="https://i.postimg.cc/bJrW3c2J/mostafa-El-Gamal-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/C13D8KWW/rabah-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/0jJ31Yn8/omar-dawood-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/qv4sQzgX/salem-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/SjFPSn1w/seif-el-wakil-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/nVSgXWkh/yassin-helal-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/MpDzLwXF/yassin-El-Sharawy-Ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/sDD5MjSt/youssef-hossam-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/VsZpJhRn/youssef-khaled-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/sxd4yBs9/eitaj-saudi-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/mg8jM2yF/dara-adel-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/kGqRfW70/hedy-sakr-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/J0LYxYDm/huda-ahmed-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/hPCMQtrG/jana-kisk-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/RC7Dhmyv/jana-fishar-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/HnF6BfZ9/jana-shadouf-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/QMDyLZXw/jana-khodier-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/8kLgVkVq/kenzy-ai.jpg" alt=""> 
+    <img src="https://i.postimg.cc/wjGWZjyJ/rawda-ez.jpg" alt="">
+    <img src="https://i.postimg.cc/W3R5pY7X/rana-el-shiekh-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/L5DDT9Ff/rahma-agag-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/2ShKXSf7/rema-hossam-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/k5yhqYGt/renad-mohammed-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/ncV0LDqR/mariam-sallam-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/Qxp9v4Fm/retaj-ali-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/Jnk4Z0Jx/ritag-hani-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/fyvsf9Ls/rofan-mohamed-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/T1N7xdNG/hala-adel-ai-kid-photo-(end).jpg" alt="">
+  </div>
+</div>
+
+<div class="view-section" id="boysView">
+  <div class="section-title">Boy Section</div>
+  <div class="kids" id="boysGrid">
+    <img src="https://i.postimg.cc/T3jzPc6P/mohammed-wael-Ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/MTD3sbyB/El-Tantawy-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/tJMX2NTn/Abo-hamdi-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/xTd53gt0/ahmed-shrf-ai.jpg" alt="">
+    <img src="https://i.postimg.cc/rFDyz3n9/adhem-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/CKsSWg5y/Ahmed-tamir-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/vTksW8qL/Ahmed-tawfik-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/qM60pnqn/Anas-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/Z5rSdSrZ/hamdon-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/kgHNr0Vb/hassan-bakr-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/rF78CFSV/Karam-kid-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/TwPMF5Bh/khaled-el-shourbagy-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/5yyrP5xJ/Khaled-basha-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/d3nd5pMp/mohammed-eslam-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/6Q6CBpSh/mohamed-adham-ai.jpg" alt="">
+    <img src="https://i.postimg.cc/bJrW3c2J/mostafa-El-Gamal-AI-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/C13D8KWW/rabah-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/0jJ31Yn8/omar-dawood-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/qv4sQzgX/salem-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/SjFPSn1w/seif-el-wakil-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/nVSgXWkh/yassin-helal-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/MpDzLwXF/yassin-El-Sharawy-Ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/sDD5MjSt/youssef-hossam-AI-kid.jpg" alt="">
+    <img src="https://i.postimg.cc/VsZpJhRn/youssef-khaled-ai-kid-photo.jpg" alt="">
+
+  </div>
+</div>
+
+<div class="view-section" id="girlsView">
+  <div class="section-title">Girl Section</div>
+  <div class="kids" id="girlsGrid">
+    <img src="https://i.postimg.cc/sxd4yBs9/eitaj-saudi-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/mg8jM2yF/dara-adel-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/kGqRfW70/hedy-sakr-ai-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/J0LYxYDm/huda-ahmed-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/RC7Dhmyv/jana-fishar-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/HnF6BfZ9/jana-shadouf-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/QMDyLZXw/jana-khodier-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/wjGWZjyJ/rawda-ez.jpg" alt="">
+    <img src="https://i.postimg.cc/W3R5pY7X/rana-el-shiekh-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/L5DDT9Ff/rahma-agag-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/2ShKXSf7/rema-hossam-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/k5yhqYGt/renad-mohammed-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/ncV0LDqR/mariam-sallam-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/hPCMQtrG/jana-kisk-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/Qxp9v4Fm/retaj-ali-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/8kLgVkVq/kenzy-ai.jpg" alt="">
+    <img src="https://i.postimg.cc/Jnk4Z0Jx/ritag-hani-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/fyvsf9Ls/rofan-mohamed-ai-kid-photo.jpg" alt="">
+    <img src="https://i.postimg.cc/T1N7xdNG/hala-adel-ai-kid-photo-(end).jpg" alt="">
+  </div>
+</div>
+      
+
+<div class="view-section" id="rolesView">
+
+  <div style="
+    min-height:60vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:40px;
+  ">
+
+    <h1 style="
+      font-size:clamp(45px,7vw,90px);
+      color:#e3b55e;
+      margin-bottom:20px;
+      font-weight:800;
+    ">
+      Coming Soon...
+    </h1>
+
+    <p style="
+      color:rgba(255,255,255,0.7);
+      font-size:20px;
+    ">
+      Roles Section will be available soon
+    </p>
+
+  </div>
+
+</div>      
+
+
+    </div>
+<div class="results-section" id="results">
+
+  <div class="results-grid" id="resultsGrid">
+
+    <div class="result-card">
+      
+      <div class="result-info">
+        <h2>PUT NAME HERE</h2>
+        <p class="role-text">PUT ROLE HERE</p>
+      </div>
+
+      <div class="result-images">
+        <div class="image-box">
+
+          <img
+            src="PUT FIRST IMAGE LINK HERE"
+            class="student-image image-one active"
+            alt=""
+          >
+
+          <img
+            src="PUT SECOND IMAGE LINK HERE"
+            class="student-image image-two"
+            alt=""
+          >
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+ 
+<div class="footer">
+
+  <div class="footer-socials">
+
+    <a href="https://www.instagram.com/seniors3_2026abe?igsh=MXBldzcyZ3dpeDFy" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@amrebnelass_seniors32026?_r=1&_t=ZS-96ZaClCIzFk" target="_blank">
+      <i class="fab fa-tiktok"></i>
+    </a>
+
+  </div>
+<footer>
+  All Designs Reserved To 
+  <a href="https://youssef-portfolio-psi.vercel.app/" target="_blank" class="footer-link">
+    El-Tantawy
+  </a>
+</footer>
+  <p>© ABE Senior 2026 . All Rights Reserved.</p>
+
+</div>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const searchInput = document.getElementById("searchInput");
+    const resultsSection = document.getElementById("results");
+    const resultsGrid = document.getElementById("resultsGrid");
+    const emptyState = document.getElementById("emptyState");
+ menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+const viewSections = {
+  home: document.getElementById("homeView"),
+  abe: document.getElementById("abeView"),
+  boys: document.getElementById("boysView"),
+  girls: document.getElementById("girlsView"),
+  roles: document.getElementById("rolesView"),
+};
+
+function showView(viewName){
+  Object.values(viewSections).forEach(section => {
+    section.classList.remove("active");
+  });
+
+  if(viewSections[viewName]){
+    viewSections[viewName].classList.add("active");
+  }
+}
+
+document.querySelectorAll(".sidebar a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const view = link.getAttribute("data-view");
+    showView(view);
+    sidebar.classList.remove("active");
+  });
+});
+
+const students = [
+  {
+    name: "youssef el-tantawy",
+    display: "Youssef El-Tantawy",
+    role: "creative thinker",
+    gender: "boy",
+    image1: "https://i.postimg.cc/MTD3sbyB/El-Tantawy-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/BnM1YCzT/El-Tantawy-O-3.jpg",
+  },
+  {
+    name:"karam El-bohoty",
+    display: "Karam El-Bohoty",
+    role:"Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/rF78CFSV/Karam-kid-ai-photo.jpg",
+    image2: "https://i.postimg.cc/pXdfSk8R/Karam-O.jpg",
+  },
+  {
+    name: "adham hazem",
+    display: "Adham Hazem",
+    role: "Gymnastics ",
+    gender: "boy",
+    image1: "https://i.postimg.cc/rFDyz3n9/adhem-AI-photo.jpg",
+    image2: "https://i.postimg.cc/rw6z1QJ4/adham-hazem-O.jpg",
+  },
+  {
+    name: "khaled basha",
+    display: "Khaled Basha",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/5yyrP5xJ/Khaled-basha-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/T1z2c3rr/khaled-basha-O.jpg",
+  },
+  
+  
+  {
+    name: "Ahmed Shrf",
+    display: "Ahmed Shrf",
+    role: "Gental",
+    gender: "boy",
+    image1: "https://i.postimg.cc/xTd53gt0/ahmed-shrf-ai.jpg",
+    image2: "https://i.postimg.cc/c45m9YbK/ahmed-shrf-O.jpg",
+  },
+  {
+    name: "mohammed wael",
+    display: "Mohammed Wael",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/T3jzPc6P/mohammed-wael-Ai-photo.jpg",
+    image2: "https://i.postimg.cc/T3jzPc6P/mohammed-wael-Ai-photo.jpg",
+  },
+  {
+    name: "youssef abohamdh",
+    display: "Youssef Abohamdh",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/tJMX2NTn/Abo-hamdi-AI-kid.jpg",
+    image2: "https://i.postimg.cc/tJMX2NTn/Abo-hamdi-AI-kid.jpg",
+  },
+  {
+    name: "ahmed tawfik",
+    display: "Ahmed Tawfik",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/vTksW8qL/Ahmed-tawfik-AI-photo.jpg",
+    image2: "https://i.postimg.cc/xd8Y5jvS/Ahmed-tawfik-O.jpg",
+  },
+  {
+    name: "anas",
+    display: "Anas",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/qM60pnqn/Anas-AI-photo.jpg",
+    image2: "https://i.postimg.cc/qM60pnqn/Anas-AI-photo.jpg",
+  },
+  
+  {
+    name: "mohamed adham",
+    display: "Mohamed Adham",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/6Q6CBpSh/mohamed-adham-ai.jpg",
+    image2: "https://i.postimg.cc/ZR2NPFRT/mohamed-adham-O.jpg",
+  },
+  {
+    name: "abdelrahman hamdon",
+    display: "Abdelrahman Hamdon",
+    role: "style",
+    gender: "boy",
+    image1: "https://i.postimg.cc/Z5rSdSrZ/hamdon-AI-photo.jpg",
+    image2: "https://i.postimg.cc/8C45VDVd/hamdon-O.jpg",
+  },
+  {
+    name: "hassan bakr",
+    display: "Hassan Bakr",
+    role: "Best Smile ",
+    gender: "boy",
+    image1: "https://i.postimg.cc/kgHNr0Vb/hassan-bakr-AI-kid.jpg",
+    image2: "https://i.postimg.cc/j5kSLX2g/hassan-bakr-O.jpg",
+  },
+  {
+    name: "khaled el-shourbagy",
+    display: "Khaled El-Shourbagy",
+    role: "calmest",
+    gender: "boy",
+    image1: "https://i.postimg.cc/TwPMF5Bh/khaled-el-shourbagy-AI-photo.jpg",
+    image2: "https://i.postimg.cc/TwPMF5Bh/khaled-el-shourbagy-AI-photo.jpg",
+  },
+  {
+    name: "mohammed eslam",
+    display: "Mohammed Eslam",
+    role: "Best Eyes & Gentel ",
+    gender: "boy",
+    image1: "https://i.postimg.cc/d3nd5pMp/mohammed-eslam-AI-kid.jpg",
+    image2: "https://i.postimg.cc/m29gg7sb/mohamed-eslam-O.jpg",
+  },
+  
+  {
+    name: "mostafa rabah",
+    display: "Mostafa Rabah",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/C13D8KWW/rabah-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/qRT6BFy0/rabah-2-O.jpg",
+  },
+  {
+    name: "salem ahmed",
+    display: "Salem Ahmed",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/qv4sQzgX/salem-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/9XwYQ6vB/salem-O.jpg",
+  },
+  {
+    name: "mostafa el-gamal",
+    display: "Mostafa El-Gamal",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/bJrW3c2J/mostafa-El-Gamal-AI-photo.jpg",
+    image2: "https://i.postimg.cc/bJrW3c2J/mostafa-El-Gamal-AI-photo.jpg",
+  },
+  {
+    name: "omar dawood",
+    display: "Omar Dawood",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/0jJ31Yn8/omar-dawood-ai-photo.jpg",
+    image2: "https://i.postimg.cc/P5krpNX0/omar-dawood-O.jpg",
+  },
+  {
+    name: "yassin helal",
+    display: "Yassin Helal",
+    role: "trouble maker",
+    gender: "boy",
+    image1: "https://i.postimg.cc/nVSgXWkh/yassin-helal-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/TPdd0SWk/yassin-helal-O.jpg",
+  },
+  {
+    name: "yassin el-shaarawy",
+    display: "Yassin El-Shaarawy",
+    role: "Footballer",
+    gender: "boy",
+    image1: "https://i.postimg.cc/MpDzLwXF/yassin-El-Sharawy-Ai-photo.jpg",
+    image2: "https://i.postimg.cc/k4Z7ngYb/yassin-sharawy-O.jpg",
+  },
+  {
+    name: "youssef hossam",
+    display: "Youssef Hossam",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/sDD5MjSt/youssef-hossam-AI-kid.jpg",
+    image2: "https://i.postimg.cc/3NvYWQPh/youssef-hossam-O.jpg",
+  },
+  {
+    name: "youssef khaled",
+    display: "Youssef Khaled",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/VsZpJhRn/youssef-khaled-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/VsZpJhRn/youssef-khaled-ai-kid-photo.jpg",
+  },
+  
+  {
+    name: "ahmed tamer",
+    display: "Ahmed Tamer",
+    role: "Popular ",
+    gender: "boy",
+    image1: "https://i.postimg.cc/CKsSWg5y/Ahmed-tamir-ai-photo.jpg",
+    image2: "https://i.postimg.cc/nLpz5rNM/ahmed-tamer-O.jpg",
+  },
+  
+  {
+    name: "seif osama",
+    display: "Seif Osama",
+    role: "Student",
+    gender: "boy",
+    image1: "https://i.postimg.cc/SjFPSn1w/seif-el-wakil-ai-photo.jpg",
+    image2: "https://i.postimg.cc/x1n0ZJJF/seif-O-2.jpg",
+  },
+  //girls
+  
+  {
+    name: "dara adel",
+    display: "Dara Adel",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/mg8jM2yF/dara-adel-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/BZLK2L0z/dara-adel-O.jpg",
+  },
+  {
+    name: "etaj sauodi",
+    display: "Etaj Sauodi",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/sxd4yBs9/eitaj-saudi-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/c1p8hx1x/etaj-photo-O.jpg",
+  },
+  {
+    name: "hedy sakr",
+    display: "Hedy Sakr",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/kGqRfW70/hedy-sakr-ai-photo.jpg",
+    image2: "https://i.postimg.cc/kGqRfW70/hedy-sakr-ai-photo.jpg",
+  },
+  {
+    name: "huda ahmed",
+    display: "Huda Ahmed",
+    role: "Teacher`s favourite",
+    gender: "girl",
+    image1: "https://i.postimg.cc/J0LYxYDm/huda-ahmed-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/J0LYxYDm/huda-ahmed-ai-kid-photo.jpg",
+  },
+  {
+    name: "jana feshar",
+    display: "Jana Feshar",
+    role: "Best Energetic",
+    gender: "girl",
+    image1: "https://i.postimg.cc/RC7Dhmyv/jana-fishar-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/W4pDzSTg/jana-feshar-O.jpg",
+  },
+  {
+    name: "jana shadouf",
+    display: "Jana Shadouf",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/HnF6BfZ9/jana-shadouf-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/HnF6BfZ9/jana-shadouf-ai-kid-photo.jpg",
+  },
+  {
+    name: "jana khodier",
+    display: "Jana Khodier",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/QMDyLZXw/jana-khodier-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/QMDyLZXw/jana-khodier-ai-kid-photo.jpg",
+  },
+  {
+    name: "rawda ez",
+    display: "Rawda Ez",
+    role:"pianist",
+    gender: "girl",
+    image1: "https://i.postimg.cc/wjGWZjyJ/rawda-ez.jpg",
+    image2: "https://i.postimg.cc/s2Sj6BYT/rawda-ez-O.jpg",
+  },
+  {
+    name: "rana el-shiekh",
+    display: "Rana El-Shiekh",
+    role:"Best Energetic & Funniest",
+    gender: "girl",
+    image1: "https://i.postimg.cc/W3R5pY7X/rana-el-shiekh-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/JnvtTLJt/rana-elsheikh-O.jpg",
+  },
+  {
+    name: "rahma agag",
+    display: "Rahma Agag",
+    role:"Athletics",
+    gender: "girl",
+    image1: "https://i.postimg.cc/L5DDT9Ff/rahma-agag-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/mDttNDcT/rahma-agag-O.jpg",
+  },
+  {
+    name: "rema hossam",
+    display: "Rema Hossam",
+    role:"Best Hair",
+    gender: "girl",
+    image1: "https://i.postimg.cc/2ShKXSf7/rema-hossam-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/2ShKXSf7/rema-hossam-ai-kid-photo.jpg",
+  },
+  {
+    name: "renad mohammed",
+    display: "Renad Mohammed",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/k5yhqYGt/renad-mohammed-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/4ycyqSbB/renad-mohammed.jpg",
+  },
+  {
+    name: "mariam sallam",
+    display: "Mariam Sallam",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/ncV0LDqR/mariam-sallam-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/ncV0LDqR/mariam-sallam-ai-kid-photo.jpg",
+  },
+  {
+    name: "jana kishk",
+    display: "Jana Kishk",
+    role:"Best Energetic",
+    gender: "girl",
+    image1: "https://i.postimg.cc/hPCMQtrG/jana-kisk-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/DzCSXswc/jana-kishk-O.jpg"
+  },
+  {
+    name: "retaj ali",
+    display: "Retaj Ali",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/Qxp9v4Fm/retaj-ali-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/Qxp9v4Fm/retaj-ali-ai-kid-photo.jpg",
+  },
+  
+  {
+    name: "kenzy khareldin",
+    display: "Kenzy Khareldin",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/8kLgVkVq/kenzy-ai.jpg",
+    image2: "https://i.postimg.cc/8kLgVkVq/kenzy-ai.jpg",
+  },
+  {
+    name: "ritag hani",
+    display: "Ritag Hani",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/Jnk4Z0Jx/ritag-hani-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/Jnk4Z0Jx/ritag-hani-ai-kid-photo.jpg",
+  },
+  {
+    name: "rovan mohamed",
+    display: "Rovan Mohamed",
+    role: "Student",
+    gender: "girl",
+    image1: "https://i.postimg.cc/fyvsf9Ls/rofan-mohamed-ai-kid-photo.jpg",
+    image2: "https://i.postimg.cc/8kf777Qj/rovan-mohammed-O.jpg",
+  },
+  {
+    name: "hala adel",
+    display: "Hala Adel",
+    role:"Best smile",
+    gender: "girl",
+    image1: "https://i.postimg.cc/T1N7xdNG/hala-adel-ai-kid-photo-(end).jpg",
+    image2: "https://i.postimg.cc/8k2r4pkR/hala-adel-O.jpg",
+  }
+];
+
+
+    let activeTimers = [];
+
+function clearTimers() {
+  activeTimers.forEach(clearInterval);
+  activeTimers = [];
+}
+function typeText(el, text, speed = 80) {
+
+  let index = 0;
+  let deleting = false;
+
+  function loopTyping() {
+
+    if (!deleting) {
+
+      el.textContent = text.substring(0, index);
+      index++;
+
+      if (index > text.length) {
+        deleting = true;
+
+        setTimeout(loopTyping, 1200);
+        return;
+      }
+
+    } else {
+
+      el.textContent = text.substring(0, index);
+      index--;
+
+      if (index < 0) {
+        deleting = false;
+        index = 0;
+      }
+
+    }
+
+    setTimeout(loopTyping, deleting ? 40 : speed);
+  }
+
+  loopTyping();
+}
+
+function swapImages(img1, img2, delay = 300) {
+
+  let showingFirst = true;
+
+  const timer = setInterval(() => {
+
+    if (showingFirst) {
+
+      img1.classList.remove("active");
+      img2.classList.add("active");
+
+    } else {
+
+      img2.classList.remove("active");
+      img1.classList.add("active");
+
+    }
+
+    showingFirst = !showingFirst;
+
+  }, delay);
+
+  activeTimers.push(timer);
+}
+function girlsCheck(student){
+  return student.gender === "girl";
+}
+function renderResults(query) {
+
+  clearTimers();
+
+ const value = query.trim().toLowerCase();
+
+  // 👇 مهم جداً: اخفاء كل الصفحات وقت البحث
+  Object.values(viewSections).forEach(section => {
+    section.classList.remove("active");
+  });
+
+  if (!value) {
+    document.body.classList.remove("searching");
+    resultsSection.classList.remove("active");
+    resultsGrid.innerHTML = "";
+    return;
+  }
+
+let matches = [];
+
+if (value.includes("boy")) {
+  matches = students.filter(s => s.gender === "boy");
+} 
+else if (value.includes("girl")) {
+  matches = students.filter(s => s.gender === "girl");
+} 
+else {
+  matches = students.filter(student =>
+    student.name.toLowerCase().trim().includes(value)
+  );
+}
+
+ document.body.classList.add("searching");
+resultsSection.classList.add("active");
+
+  resultsGrid.innerHTML = "";
+
+  if (matches.length === 0) {
+    document.body.classList.add("searching");
+
+    resultsGrid.innerHTML = `
+      <div style="
+        text-align:center;
+        width:100%;
+        padding:40px;
+        color:rgba(255,255,255,0.7);
+        font-size:20px;
+      ">
+        No student found
+      </div>
+    `;
+
+    return;
+  }
+
+  matches.forEach(student => {
+
+    const card = document.createElement("div");
+
+    card.className = "result-card";
+
+    card.innerHTML = `
+
+      <div class="result-info">
+
+        <h2>${student.display}</h2>
+
+        <p class="role-text"></p>
+
+      </div>
+
+      <div class="result-images">
+
+        <div class="image-box">
+
+          <img
+            src="${student.image1}"
+            class="student-image active"
+            alt=""
+          >
+
+          <img
+            src="${student.image2}"
+            class="student-image"
+            alt=""
+          >
+
+        </div>
+
+      </div>
+
+    `;
+
+    resultsGrid.appendChild(card);
+
+    const roleEl =
+      card.querySelector(".role-text");
+
+    const imgs = card.querySelectorAll(".student-image");
+const img1 = imgs[0];
+const img2 = imgs[1];
+    typeText(roleEl, student.role);
+
+    swapImages(img1, img2, 3000);
+
+  });
+
+}
+
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get("search");
+
+      if (searchQuery) {
+        searchInput.value = searchQuery;
+        renderResults(searchQuery);
+      }
+    };
+
+    searchInput.addEventListener("input", (e) => {
+      renderResults(e.target.value);
+    });
+
+
+    showView("home");
+
+    window.addEventListener("scroll", () => {
+
+  const scrollY = window.scrollY;
+
+  document.querySelector(".left-party").style.transform =
+    `translateY(-50%) translateX(${scrollY * 0.4}px) rotate(${scrollY * 0.05}deg)`;
+
+  document.querySelector(".right-party").style.transform =
+    `translateY(-50%) translateX(-${scrollY * 0.4}px) rotate(-${scrollY * 0.05}deg)`;
+
+});
+  </script>
+</body>
+</html>
